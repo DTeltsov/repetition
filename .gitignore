@@ -65,7 +65,7 @@ cover/
 
 # Django stuff:
 *.log
-settings.py
+repetition/settings.py
 db.sqlite3
 db.sqlite3-journal
 
