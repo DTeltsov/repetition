@@ -7,15 +7,24 @@ class Album(models.Model):
     title = models.CharField(max_length=250)
     number_of_songs = models.SmallIntegerField(blank=True, null=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Gener(models.Model):
     name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
 
 
 class Artist(models.Model):
     name = models.CharField(max_length=250)
     albums = models.ManyToManyField(Album)
     geners = models.ManyToManyField(Gener, blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Song(models.Model):
@@ -30,6 +39,9 @@ class Song(models.Model):
     year = models.CharField(max_length=4, blank=True)
     play_count = models.IntegerField(default=0)
     added_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
 
 class Profile(models.Model):
